@@ -1,19 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Make:</strong>
+<h1>
   <%= @car.make %>
-</p>
-
-<p>
-  <strong>Model:</strong>
   <%= @car.model %>
-</p>
-
-<p>
-  <strong>Year:</strong>
   <%= @car.year %>
-</p>
+</h1>
+
+<br>
+
+<h2>Comments</h2>
+<%= render @car.comments %>
+
+<br>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+<br>
 
 <%= link_to 'Edit', edit_car_path(@car) %> |
-<%= link_to 'Back', cars_path %>
+<%= link_to 'Back', cars_path %> |
+<%= link_to 'Destroy', @car, method: :delete, data: { confirm: 'Are you sure?' } %>
